@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DigitalBaboon;
+namespace Asko\Collection;
 
 use function Crell\fp\pipe;
 
@@ -10,7 +10,7 @@ use function Crell\fp\pipe;
  * A generic class that encapsulates a collection of items
  * and provides helper methods to work with said collection.
  *
- * @author Digital Baboon
+ * @author Asko Nõmm
  * @template T
  */
 class Collection implements \Countable

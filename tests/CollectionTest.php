@@ -8,7 +8,7 @@ final class CollectionTest extends TestCase
 {
     public function testPush(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $collection->push(6);
 
@@ -17,7 +17,7 @@ final class CollectionTest extends TestCase
 
     public function testFilter(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $filtered = $collection->filter(fn ($item) => $item % 2 === 0);
 
@@ -26,7 +26,7 @@ final class CollectionTest extends TestCase
 
     public function testMap(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $mapped = $collection->map(fn ($item) => $item * 2);
 
@@ -35,49 +35,49 @@ final class CollectionTest extends TestCase
 
     public function testCount(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $this->assertEquals(5, $collection->count());
     }
 
     public function testEach(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $collection->each(fn ($item) => $this->assertEquals($item, $item));
     }
 
     public function testAvg(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $this->assertEquals(3, $collection->avg(fn ($item) => $item));
     }
 
     public function testSum(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $this->assertEquals(15, $collection->sum(fn ($item) => $item));
     }
 
     public function testToArray(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $this->assertEquals([1, 2, 3, 4, 5], $collection->toArray());
     }
 
     public function testEmptyCollection(): void
     {
-        $collection = new DigitalBaboon\Collection();
+        $collection = new Asko\Collection\Collection();
 
         $this->assertEquals([], $collection->toArray());
     }
 
     public function testFilterEmptyCollection(): void
     {
-        $collection = new DigitalBaboon\Collection();
+        $collection = new Asko\Collection\Collection();
 
         $filtered = $collection->filter(fn ($item) => $item % 2 === 0);
 
@@ -86,7 +86,7 @@ final class CollectionTest extends TestCase
 
     public function testMapEmptyCollection(): void
     {
-        $collection = new DigitalBaboon\Collection();
+        $collection = new Asko\Collection\Collection();
 
         $mapped = $collection->map(fn ($item) => $item * 2);
 
@@ -95,7 +95,7 @@ final class CollectionTest extends TestCase
 
     public function testPushEmptyCollection(): void
     {
-        $collection = new DigitalBaboon\Collection();
+        $collection = new Asko\Collection\Collection();
 
         $collection->push(6);
 
@@ -104,7 +104,7 @@ final class CollectionTest extends TestCase
 
     public function testReduce(): void
     {
-        $collection = new DigitalBaboon\Collection([1, 2, 3, 4, 5]);
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $reduced = $collection->reduce(fn ($acc, $item) => $acc + $item, 0);
 
