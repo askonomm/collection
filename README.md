@@ -1,20 +1,22 @@
 # Collection
 
+[![codecov](https://codecov.io/gh/askonomm/collection/graph/badge.svg?token=BIQDOAGJBT)](https://codecov.io/gh/askonomm/collection)
+
 A generic class that encapsulates a collection of items and provides helper methods to work with said collection.
 
 ## Installation
 
 ```bash
-composer require digitalbaboon/collection
+composer require asko/collection
 ```
 
 ## Usage
 
-Creating a new collection is as simple as creating a new Collection class instance and passing the constructor 
+Creating a new collection is as simple as creating a new Collection class instance and passing the constructor
 an array of items.
 
 ```php
-use DigitalBaboon\Collection\Collection;
+use Asko\Collection\Collection;
 
 $collection = new Collection([1, 2, 3, 4, 5]);
 ```
