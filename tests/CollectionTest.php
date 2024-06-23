@@ -118,11 +118,25 @@ final class CollectionTest extends TestCase
         $this->assertEquals(1, $collection->first());
     }
 
+    public function testFirstEmptyCollection(): void
+    {
+        $collection = new Asko\Collection\Collection();
+
+        $this->assertEquals(null, $collection->first());
+    }
+
     public function testLast(): void
     {
         $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $this->assertEquals(5, $collection->last());
+    }
+
+    public function testLastEmptyCollection(): void
+    {
+        $collection = new Asko\Collection\Collection();
+
+        $this->assertEquals(null, $collection->last());
     }
 
     public function testAny(): void
@@ -132,10 +146,24 @@ final class CollectionTest extends TestCase
         $this->assertTrue($collection->any(fn ($item) => $item === 3));
     }
 
+    public function testAnyFalse(): void
+    {
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
+
+        $this->assertFalse($collection->any(fn ($item) => $item === 6));
+    }
+
     public function testAll(): void
     {
         $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
 
         $this->assertTrue($collection->all(fn ($item) => $item > 0));
+    }
+
+    public function testAllFalse(): void
+    {
+        $collection = new Asko\Collection\Collection([1, 2, 3, 4, 5]);
+
+        $this->assertFalse($collection->all(fn ($item) => $item > 1));
     }
 }
